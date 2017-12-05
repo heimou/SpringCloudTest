@@ -12,7 +12,16 @@ eureka:
   instance:
     prefer-ip-address: true # 设置为ip 模式
     lease-renewal-interval-in-seconds: 30 # 续约更新时间间隔（默认30秒）
-    lease-expiration-duration-in-seconds : 10   # 续约到期时间（默认90秒）
+    lease-expiration-duration-in-seconds : 10 # 续约到期时间（默认90秒）
+zuul:
+  routes:
+    webclient : # webclient 为注册中心的示例名 service_Id 若没有则保证路由中心唯一
+     path: /hello/**
+     serviceId : webclient
+    api-a :
+     serviceId : webclient
+     path : /hi/**
+     url: http://webclient:8762/inter/getbadBoy #到具体的物理地址
 
 #
 #hystrix.command.default.execution.timeout.enabled: true

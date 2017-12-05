@@ -23,5 +23,10 @@ public class TestController {
         return "hrart die ! !";
     }
 
+    @GetMapping(value = "/getbadBoy")
+    public String getBadBoy(){
+        return "oh! you met an  angel !";
+    }
+
 
 }
