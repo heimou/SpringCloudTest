@@ -1,0 +1,10 @@
+
+# 通过git 去获取配置信息  bootstrap.yml
+spring:
+  cloud:
+    config:
+      uri: http://config:8764/
+      name: webClientConfig
+  profiles:
+    active: dev
+management.security.enabled: false

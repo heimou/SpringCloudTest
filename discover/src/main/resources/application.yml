@@ -1,6 +1,8 @@
+#激活不同的profile
+#java -jar registries-0.0.1-SNAPSHOT.jar --spring.profiles.active=eurekapeer1
 
 spring:
-  profiles: eurekapeer1
+#  profiles: eurekapeer1 #加了这个参数 必须在启动项中带 参数 --spring.profiles.active=eurekapeer1
   application:
     name: discover
 server:
@@ -11,10 +13,10 @@ eureka:
     lease-expiration-duration-in-seconds: 10 #表示eureka server至上一次收到client的心跳之后，等待下一次心跳的超时时间，在这个时间内若没收到下一次心跳，则将移除该instance。默认为90秒
     prefer-ip-address: true  #在注册中心的示例 显示ip
   client:
+    register-with-eureka: false
+    fetch-registry: false  #是否获取注册中心服务列表
     serviceUrl:
-     defaultZone: http://eurekapeer1:8761/eureka/      # 将自己注册到peer2这个Eureka上面去
-    register-with-eureka: false  #是否注册到注册中心
-    fetch-registry : false  #是否获取注册中心服务列表
+     defaultZone: http://eurekapeer1:8761/eureka/ # 将自己注册到peer2这个Eureka上面去
 #  server.enable-self-preservation: false  #关闭安全模式
 
 #spring:

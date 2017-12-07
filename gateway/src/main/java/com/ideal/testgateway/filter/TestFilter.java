@@ -25,7 +25,7 @@ public class TestFilter  extends ZuulFilter{
      */
     @Override
     public String filterType() {
-        return "pre";
+        return "post";
     }
 
     /**
@@ -58,6 +58,7 @@ public class TestFilter  extends ZuulFilter{
         RequestContext ctx = RequestContext.getCurrentContext();
         HttpServletRequest request = ctx.getRequest();
         log.info(String.format("send %s request to %s", request.getMethod(), request.getRequestURL().toString()));
+        log.info("========"+request.getPathInfo());
         return null;
     }
 

@@ -1,0 +1,21 @@
+server:
+  port: 8764
+spring:
+  application:
+    name: config
+  cloud:
+    config:
+      label: master
+      server:
+        git:
+          uri: https://github.com/heimou/configService #git 地址
+          search-paths: springGateway,springWebClientConfig,springdataconfig # 仓库路径下的相对搜索位置，可以配置多个 后续尝试自动匹配‘｛application｝’
+          username:
+          password:
+          basedir: D:\gitRespoity #本地存储路径
+eureka:
+  client:
+    serviceUrl:
+     defaultZone: http://eurekapeer1:8761/eureka/
+  instance:
+    prefer-ip-address: true # 设置为ip 模式

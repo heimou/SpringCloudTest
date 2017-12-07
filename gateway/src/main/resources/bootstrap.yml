@@ -1,0 +1,9 @@
+# 通过git 去获取配置信息  bootstrap.yml
+spring:
+  cloud:
+    config:
+      uri: http://config:8764/
+      name: gateway      # 这里为你的远程仓库 中的 spring.cloud.name
+  profiles:
+    active: dev
+management.security.enabled: false
