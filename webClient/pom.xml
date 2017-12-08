@@ -23,6 +23,17 @@
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>test.ideal.com</groupId>
+            <artifactId>pojo</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>test.ideal.com</groupId>
+            <artifactId>data-api</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
         <!--暴露spring cloud 各种服务-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
