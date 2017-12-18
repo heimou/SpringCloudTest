@@ -13,11 +13,7 @@ public class MD5EncryptionUtils {
 
     private final static Logger log = LoggerFactory.getLogger(MD5EncryptionUtils.class);
 
-    /**
-     * 报文加密格式
-     * transactionId +”svcCont”开始到”svcCont”结束的业务信息json串+ SecretKey
-     * 采用MD5方式取哈希值（32位小写）进行签名，签名后的数据放在tcpCont/ sign字段。
-     */
+
     public static String getMD5(String transactionId, String svcCont, String SecretKey) {
         log.info("==transactionId==" + transactionId);
         log.info("==svcCont==" + svcCont);
