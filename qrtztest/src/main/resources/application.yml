@@ -1,0 +1,14 @@
+server:
+  port: 8395
+spring:
+  application:
+    name: microservice-simple-quartz-cluster
+  job: 
+    test:
+     cron: 0/5 * * * * ? 
+     
+# cron 参数可能为6个或者7个 
+# s(0-59)  min(0-59) h(0-23) day(0-31) month(0-11) 星期(1-7) year(?) 以,隔开为一个
+# 0/5 * * * * ? 每隔5s触发一次 
+    
+    
